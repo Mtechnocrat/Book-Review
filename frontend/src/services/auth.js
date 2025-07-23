@@ -4,7 +4,7 @@ const AUTH_API_URL = 'http://localhost:5000/api';
 
 // Create separate axios instance for auth (no auth interceptors)
 const authAPI = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_API_URL  + "/auth",
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

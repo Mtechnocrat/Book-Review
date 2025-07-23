@@ -54,7 +54,13 @@ export const bookAPI = {
   createBook: async (bookData) => {
     const response = await api.post('/books', bookData);
     return response.data;
+
   },
+
+  getBookReviews: (bookId) =>
+    api.get(`/books/${bookId}/reviews`).then((r) => r.data),
+  addReview: (bookId, data) =>
+    api.post(`/books/${bookId}/reviews`, data).then((r) => r.data),
 
   // Update book
   updateBook: async (id, bookData) => {
